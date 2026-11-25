@@ -32,7 +32,11 @@ Semua waktu di bawah ini WIB (Asia/Jakarta).
 - out/ dan out2/ dihapus setelahnya.
 
 ## 2026-11-26 — Repo GitHub
-- (Perintah + hasil di bawah.)
+- /root/.ssh kosong lagi (hilang saat restart VM, seperti sebelumnya) → dipulihkan dari /home/hatch/.ssh (config + id_ed25519_github_v2), known_hosts dibangun ulang via ssh-keyscan, fingerprint ED25519 SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU terverifikasi; ssh -T git@github.com → "Hi bzndenis!".
+- Perintah: python3 ~/workspace/custom-connectors/custom.github/bin/github.py create-repo --name muse-bounty-national-statistics-site → repo publik bzndenis/muse-bounty-national-statistics-site (id 1472203764).
+- .makefun/owner.json ditulis (wallet sama seperti entri sebelumnya).
+- git init, commit fa0ffe9cda876d0b6657be4882cf81eff7795de3 "NusaData: original national statistics site for make.fun best-national-statistics-site bounty", push main → OK. Homepage di-set ke halaman bounty, topics: makefun, statistics, indonesia, javascript. Verifikasi: local HEAD = remote HEAD (fa0ffe9c…), get-repo status 200, private: false.
+- Catatan: API publik GitHub tanpa auth sempat mengembalikan 403 rate limit saat pengecekan; verifikasi dilakukan lewat helper terautentikasi + git ls-remote.
 
 ## Status
 - SUBMIT BELUM DILAKUKAN. Yang masih dibutuhkan dari Denis: submit manual sebelum deadline Minggu 29 Nov 2026 12:39 WIB (via website make.fun), karena langkah submit CLI diblokir di environment ini. Transkrip final (bundle) perlu dirakit saat submit dari sesi ini + BUILD_LOG.md ini.
